@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:title="ตั้งค่าโปรไฟล์"
+        android:id="@+id/main_account_setting_buttom"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:title="ผู้ใช้ทั้งหมด"
+        android:id="@+id/main_all_user_button"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:title="ออกจากระบบ"
+        android:id="@+id/main_logout_buttom"
+        app:showAsAction="never">
+    </item>
+
+
+</menu>

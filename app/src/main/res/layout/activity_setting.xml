@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context="com.example.toeyf.hana.SettingActivity">
+
+    <include
+            layout="@layout/app_bar_layout"
+            android:id="@+id/setting_page_toolbar">
+    </include>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/setting_profile_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/setting_page_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        android:elevation="3dp"
+        android:src="@drawable/default_profile"
+        app:civ_border_color="@color/cardview_light_background"
+        app:civ_border_width="3dp" />
+
+    <TextView
+        android:id="@+id/setting_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/kanit_light"
+        android:text="ชื่อของคุณ"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/setting_userStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setting_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/kanit_light"
+        android:text="สถานะของคุณ"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/setting_change_profile_image"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/setting_userStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        app:cardBackgroundColor="?android:attr/colorForeground"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
+        app:contentPadding="5dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textviewImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:autoSizeTextType="none"
+                android:fontFamily="@font/kanit_light"
+                android:text="เปลี่ยนรูปโปรไฟล์"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/setting_change_profile_status"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/setting_change_profile_image"
+        android:layout_below="@+id/setting_change_profile_image"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="?android:attr/colorPrimaryDark"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
+        app:contentPadding="5dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textviewStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:autoSizeTextType="none"
+                android:fontFamily="@font/kanit_light"
+                android:text="เปลี่ยนสถานะของคุณ"
+                android:textAllCaps="false"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

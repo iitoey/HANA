@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start_page"
+    tools:context="com.example.toeyf.hana.start_page_activity">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/already_account"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/new_account"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp"
+        app:cardBackgroundColor="?android:attr/colorForeground"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
+        app:contentPadding="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:autoSizeTextType="none"
+                android:fontFamily="@font/kanit_light"
+                android:text="เคยมีบัญชีผู้ใช้แล้ว ?"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/new_account"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/already_account"
+        android:layout_marginBottom="49dp"
+        app:cardBackgroundColor="?attr/colorPrimary"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp"
+        app:contentPadding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:autoSizeTextType="none"
+                android:fontFamily="@font/kanit_light"
+                android:text="ต้องการสมัครบัญชีผู้ใช้ใหม่ ?"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
