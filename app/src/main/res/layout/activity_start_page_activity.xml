@@ -15,7 +15,7 @@
         android:layout_alignBottom="@+id/new_account"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="65dp"
-        app:cardBackgroundColor="?android:attr/colorForeground"
+        app:cardBackgroundColor="?attr/colorPrimary"
         app:cardCornerRadius="25dp"
         app:cardElevation="5dp"
         app:contentPadding="10dp">

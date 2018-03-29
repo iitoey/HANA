@@ -57,7 +57,7 @@
         android:layout_below="@+id/setting_userStatus"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        app:cardBackgroundColor="?android:attr/colorForeground"
+        app:cardBackgroundColor="?attr/colorPrimary"
         app:cardCornerRadius="25dp"
         app:cardElevation="5dp"
         app:contentPadding="5dp">
