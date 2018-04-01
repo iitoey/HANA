@@ -73,7 +73,7 @@ public class SettingActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         String online_user_id = mAuth.getCurrentUser().getUid();
         getUserDataReference = FirebaseDatabase.getInstance().getReference().child("Users").child(online_user_id);
-        getUserDataReference.keepSynced(true);
+        //getUserDataReference.keepSynced(true);
 
         storeProfileImagestorageRef = FirebaseStorage.getInstance().getReference().child("profile_images");
 
@@ -91,6 +91,8 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
+                //รูปแบบการจัดการ view ภายใน adapter ที่เรากำหนด listview ให้เกิดประสิทธิภาะสูงสุด
+
                 String name = dataSnapshot.child("user_name").getValue().toString();
                 String status = dataSnapshot.child("user_status").getValue().toString();
                 final String image = dataSnapshot.child("user_image").getValue().toString();
@@ -212,8 +214,6 @@ public class SettingActivity extends AppCompatActivity {
                     {
                         if(task.isSuccessful())
                         {
-                            //Toast.makeText(SettingActivity.this, "กำลังอัพเดทรูปภาพของคุณ",
-                             //                                                   Toast.LENGTH_LONG).show();
 
                             final String downloadUri = task.getResult().getDownloadUrl().toString();
 
@@ -231,6 +231,7 @@ public class SettingActivity extends AppCompatActivity {
                                         update_user_data.put("user_image", downloadUri);
                                         update_user_data.put("user_thumb_image", thumb_downloadUri);
 
+                                        //แสดงรูปภาพ
 
                                         getUserDataReference.updateChildren(update_user_data)
                                                 .addOnCompleteListener(new OnCompleteListener<Void>()

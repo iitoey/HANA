@@ -37,11 +37,11 @@ public class AllUsersActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         allUserslist = (RecyclerView) findViewById(R.id.all_user_list);
-        allUserslist.setHasFixedSize(true);
+        allUserslist.setHasFixedSize(true); //กำหนดไซร์คงที่
         allUserslist.setLayoutManager(new LinearLayoutManager(this));
 
-        allDatabaseUserReference = FirebaseDatabase.getInstance().getReference().child("Users");
-        allDatabaseUserReference.keepSynced(true);
+        allDatabaseUserReference = FirebaseDatabase.getInstance().getReference().child("Users"); // ดึงข้อมูล
+        //allDatabaseUserReference.keepSynced(true);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class AllUsersActivity extends AppCompatActivity {
                 (
                         AllUsers.class,
                         R.layout.all_users_display_layout,
-                        AllUsersViewHolder.class,
+                        AllUsersViewHolder.class,  //รูปแบบการจัดการ view ภายใน adapter ที่เรากำหนด listview ให้เกิดประสิทธิภาะสูงสุด
                         allDatabaseUserReference
                 )
         {
@@ -82,7 +82,7 @@ public class AllUsersActivity extends AppCompatActivity {
         allUserslist.setAdapter(firebaseRecyclerAdapter);
     }
 
-    public static  class  AllUsersViewHolder extends RecyclerView.ViewHolder
+    public static class AllUsersViewHolder extends RecyclerView.ViewHolder
     {
         View mView;
 

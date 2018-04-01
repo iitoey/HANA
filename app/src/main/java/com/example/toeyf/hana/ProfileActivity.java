@@ -50,17 +50,17 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         friendRequestReference = FirebaseDatabase.getInstance().getReference().child("Friend_Requests");
-        friendRequestReference.keepSynced(true);
+        //friendRequestReference.keepSynced(true);
 
         mAuth = FirebaseAuth.getInstance();
         sender_user_id = mAuth.getCurrentUser().getUid();
 
 
         friend2Referance = FirebaseDatabase.getInstance().getReference().child("Friends");
-        friend2Referance.keepSynced(true);
+        //friend2Referance.keepSynced(true);
 
         notificationReference = FirebaseDatabase.getInstance().getReference().child("Notifications");
-        notificationReference.keepSynced(true);
+        //notificationReference.keepSynced(true);
 
 
 
@@ -75,12 +75,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileStatus = (TextView) findViewById(R.id.profile_visit_user_status);
         profileImage = (ImageView) findViewById(R.id.profile_visit_user_image);
 
-
-
         CURRENT_STATE = "not_friends";
-
-
-
 
         usersReference.child(receiver_user_id).addValueEventListener(new ValueEventListener() {
             @Override
@@ -89,6 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
                 String name = dataSnapshot.child("user_name").getValue().toString();
                 String status = dataSnapshot.child("user_status").getValue().toString();
                 String image = dataSnapshot.child("user_image").getValue().toString();
+                // method อย่างหนึ่งของ firebase นำค่ามาแสดง
 
                 profileName.setText(name);
                 profileStatus.setText(status);

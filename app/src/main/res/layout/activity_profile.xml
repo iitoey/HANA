@@ -49,7 +49,7 @@
         android:layout_height="50dp"
         android:layout_alignStart="@+id/decline_friend_request_button"
         android:layout_below="@+id/profile_visit_user_status"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="20dp"
         android:background="?android:attr/colorPrimaryDark"
         android:elevation="5dp"
         android:fontFamily="@font/kanit_light"
