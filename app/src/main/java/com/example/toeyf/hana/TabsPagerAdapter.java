@@ -55,7 +55,7 @@ class TabsPagerAdapter extends FragmentPagerAdapter
                 return  "ข้อความ";
 
             case 2:
-                return  "คำขอร้อง";
+                return  "คำร้องขอ";
 
             default:
                 return null;

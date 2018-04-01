@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        myViewPager = (ViewPager) findViewById(R.id.main_tabs_pager);
-        myTabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+        myViewPager = (ViewPager) findViewById(R.id.main_tabs_pager); //หน้าขาว
+        myTabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager()); // สไลด์ 3 Fragment (TPA)
         myViewPager.setAdapter(myTabsPagerAdapter);
-        myTabLayout = (TabLayout) findViewById(R.id.main_tabs);
+        myTabLayout = (TabLayout) findViewById(R.id.main_tabs); // 3 Tab
         myTabLayout.setupWithViewPager(myViewPager);
 
         myTabLayout.getTabAt(0).setIcon(R.drawable.ic_people);

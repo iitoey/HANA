@@ -23,7 +23,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private DatabaseReference storeUserDefauleDatatReference;
+    private DatabaseReference storeUserDefaultDataReference;
     private ProgressDialog loadingBar;
     private android.support.v7.widget.Toolbar mToolbar;
     private EditText RegisterUserName;
@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.register_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("ลงทะเบียนเข้าสู่ระบบ");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // ลูกศรย้อนกลับ
 
         RegisterUserName = (EditText) findViewById(R.id.register_name);
         RegisterUserEmail = (EditText) findViewById(R.id.register_email);
@@ -58,7 +58,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = RegisterUserPassword.getText().toString();
 
                 RegisterAccount(name, email, password);
-
             }
         });
 
@@ -97,14 +96,18 @@ public class RegisterActivity extends AppCompatActivity {
                             if(task.isSuccessful())
                             {
                                 String deviceToken = FirebaseInstanceId.getInstance().getToken();
+                                    //Token เป็นรหัสชุดหนึ่ง ขั้น session layer ไว้ระบุตัวตนนๆว่าคือใคร เอามาใช้ในการทำ RESTful API
+                                    //จะถูกส่งไปทุก request ผ่าน HTTP Headers
 
                                 String current_user_id = mAuth.getCurrentUser().getUid();
-                                storeUserDefauleDatatReference = FirebaseDatabase.getInstance().getReference().child("Users").child(current_user_id);
-                                storeUserDefauleDatatReference.child("user_name").setValue(name);
-                                storeUserDefauleDatatReference.child("user_status").setValue("ยินดีต้อนรับเข้าสู่ HANACHAT!");
-                                storeUserDefauleDatatReference.child("user_image").setValue("default_profile");
-                                storeUserDefauleDatatReference.child("device_token").setValue(deviceToken);
-                                storeUserDefauleDatatReference.child("user_thumb_image").setValue("default_image")
+                                storeUserDefaultDataReference = FirebaseDatabase.getInstance().getReference().child("Users").child(current_user_id);
+                                storeUserDefaultDataReference.child("user_name").setValue(name);
+                                storeUserDefaultDataReference.child("user_status").setValue("ยินดีต้อนรับเข้าสู่ HANACHAT!");
+                                storeUserDefaultDataReference.child("user_image").setValue("default_profile");
+                                storeUserDefaultDataReference.child("device_token").setValue(deviceToken);
+                                storeUserDefaultDataReference.child("user_thumb_image").setValue("default_image")
+
+
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task)
@@ -115,6 +118,8 @@ public class RegisterActivity extends AppCompatActivity {
                                                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                 startActivity(mainIntent);
                                                 finish();
+
+                                                //เป็น Consider these two snippets
                                             }
                                         }
                                     });

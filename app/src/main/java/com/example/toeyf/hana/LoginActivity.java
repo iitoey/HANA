@@ -48,8 +48,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent tostartpage = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(tostartpage);
+                Intent to_startPage = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(to_startPage);
             }
         });
 
@@ -117,6 +117,8 @@ public class LoginActivity extends AppCompatActivity {
                                                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                 startActivity(mainIntent);
                                                 finish();
+
+                                                // เป็น Consider these two snippets
                                             }
                                         });
 

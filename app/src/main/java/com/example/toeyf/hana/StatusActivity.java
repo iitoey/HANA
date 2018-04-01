@@ -80,8 +80,8 @@ public class StatusActivity extends AppCompatActivity
                                 {
                                   if(task.isSuccessful())
                                   {
-                                      Intent settinsIntent = new Intent(StatusActivity.this, SettingActivity.class);
-                                      startActivity(settinsIntent);
+                                      Intent settingIntent = new Intent(StatusActivity.this, SettingActivity.class);
+                                      startActivity(settingIntent);
 
                                       Toast.makeText(StatusActivity.this,"ทำการอัพเดทสถานะของคุณเรียบร้อย",
                                                                                         Toast.LENGTH_LONG).show();
