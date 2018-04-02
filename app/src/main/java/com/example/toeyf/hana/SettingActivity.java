@@ -240,7 +240,7 @@ public class SettingActivity extends AppCompatActivity {
                                                     public void onComplete(@NonNull Task<Void> task)
                                                     {
                                                         Toast.makeText(SettingActivity.this, "รูปภาพถูกอัพเดทเรียบร้อย",
-                                                                Toast.LENGTH_SHORT).show();
+                                                                             Toast.LENGTH_SHORT).show();
 
                                                         loadingBar.dismiss();
                                                     }

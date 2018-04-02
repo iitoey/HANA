@@ -98,6 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 String deviceToken = FirebaseInstanceId.getInstance().getToken();
                                     //Token เป็นรหัสชุดหนึ่ง ขั้น session layer ไว้ระบุตัวตนนๆว่าคือใคร เอามาใช้ในการทำ RESTful API
                                     //จะถูกส่งไปทุก request ผ่าน HTTP Headers
+                                    //จะถูกส่งไปทุก request ผ่าน HTTP Headers
 
                                 String current_user_id = mAuth.getCurrentUser().getUid();
                                 storeUserDefaultDataReference = FirebaseDatabase.getInstance().getReference().child("Users").child(current_user_id);
